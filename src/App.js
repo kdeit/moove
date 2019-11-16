@@ -13,6 +13,14 @@ const App = () => {
 	const [fetchedUser, setUser] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 
+	const [data, setData] = useState({
+		"spec": null,
+		"time": null,
+		"who": null,
+		"what": null
+	});
+
+
 
 	useEffect(() => {
 		connect.subscribe(({ detail: { type, data } }) => {
@@ -42,8 +50,8 @@ const App = () => {
 
 	return (
 		<View activePanel={activePanel} popout={popout}>
-			<Home id='home' go={go} />
-			<Score id='score' fetchedUser={fetchedUser} go={go} />
+			<Home id='home' go={go} data={data} setData={setData} />
+			<Score id='score' fetchedUser={fetchedUser} go={go} data={data} />
 		</View>
 	);
 }

@@ -12,37 +12,45 @@ const generatorTime = data.time;
 const generatorWho = data.who;
 const generatorWhat = data.what;
 
-const Home = ({ id, go }) => {
+const Home = (props) => {
 
-	const [spec, setSpec] = useState(null);
+
 
 	const selectSpec = async (e) => {
-		setSpec(e.currentTarget.dataset.title);
+		//console.warn(props.setData);
+		console.warn(props.data);
+		props.setData(val => {
+			val.spec = e.currentTarget.dataset.title;
+			return val;
+		})
+		console.warn(props.data);
+
 	}
 
 	const start = () => {
 		console.warn('start');
 	}
 
-	const button = spec ? <Group><Div><Button level="primary" size="xl" onClick={start}>Сгенерировать</Button> </Div></Group> : '';
+	const button = props.data.spec ? <Group><Div><Button level="primary" size="xl" onClick={start}>Сгенерировать</Button> </Div></Group> : '';
 
-	return <Panel id={id}>
-		<PanelHeader>{id}</PanelHeader>
+	return <Panel id={props.id}>
+		<PanelHeader>{props.id}</PanelHeader>
 		<Group>
 			<Header level="secondary">Выберите специальность</Header>
 			<List>
 				{generatorSpec.map(item => (
-					<Cell data-title={item} key={item} onClick={selectSpec}>{item}</Cell>
+					<Cell data-title={item.title} key={item.id} onClick={selectSpec}>{item.title}</Cell>
 				))}
 			</List>
 		</Group>
+
 		<Group>
 			<Header level="secondary">Через</Header>
-			<Generator items={generatorTime} multipler={2}></Generator>
+			<Generator items={generatorTime} type="time" multipler={2} data={props.data} setData={props.setData}></Generator>
 			<Header level="secondary">Даже</Header>
-			<Generator items={generatorWho} multipler={3}></Generator>
+			<Generator items={generatorWho} type="who" multipler={3} data={props.data} setData={props.setData}></Generator>
 			<Header level="secondary">Сможет</Header>
-			<Generator items={generatorWhat} multipler={4}></Generator>
+			<Generator items={generatorWhat} type="what" multipler={4} data={props.data} setData={props.setData}></Generator>
 		</Group>
 		{button}
 	</Panel>
@@ -51,6 +59,8 @@ const Home = ({ id, go }) => {
 Home.propTypes = {
 	id: PropTypes.string.isRequired,
 	go: PropTypes.func.isRequired,
+	data: PropTypes.object,
+	setData: PropTypes.func
 
 };
 
