@@ -7,27 +7,34 @@ import HeaderButton from '@vkontakte/vkui/dist/components/HeaderButton/HeaderBut
 import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
 import Icon24Back from '@vkontakte/icons/dist/24/back';
 
-import persik from '../img/persik.png';
-import './Persik.css';
+
 
 const osName = platform();
 
-const Persik = props => (
+
+const Score = props => (
 	<Panel id={props.id}>
 		<PanelHeader
 			left={<HeaderButton onClick={props.go} data-to="home">
-				{osName === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}
+				{osName === IOS ? <Icon28ChevronBack /> : <Icon24Back />}
 			</HeaderButton>}
 		>
-			Persik
+			LastScore
 		</PanelHeader>
-		<img className="Persik" src={persik} alt="Persik The Cat"/>
 	</Panel>
 );
 
-Persik.propTypes = {
+Score.propTypes = {
 	id: PropTypes.string.isRequired,
 	go: PropTypes.func.isRequired,
+	fetchedUser: PropTypes.shape({
+		photo_200: PropTypes.string,
+		first_name: PropTypes.string,
+		last_name: PropTypes.string,
+		city: PropTypes.shape({
+			title: PropTypes.string,
+		}),
+	}),
 };
 
-export default Persik;
+export default Score;

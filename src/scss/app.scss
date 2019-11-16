@@ -1,0 +1,18 @@
+@import "./variables";
+
+:root {
+  --header_background: #{$color-main};
+  --button_primary_background: #{$color-main};
+}
+
+.gen {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  &__item {
+    width: 100%;
+    flex: 1 0 100%;
+    margin: 0 10px;
+    text-align: center;
+  }
+}

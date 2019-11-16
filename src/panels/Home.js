@@ -1,47 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
-import Button from '@vkontakte/vkui/dist/components/Button/Button';
-import Group from '@vkontakte/vkui/dist/components/Group/Group';
-import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
-import Div from '@vkontakte/vkui/dist/components/Div/Div';
-import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
+import { Header, Group, Button, Div, List, Cell } from '@vkontakte/vkui';
+import Generator from "../components/generator-component"
+import data from '../json/data'
+import '../scss/app.scss';
 
-const Home = ({ id, go, fetchedUser }) => (
-	<Panel id={id}>
-		<PanelHeader>Example</PanelHeader>
-		{fetchedUser &&
-			<Group title="User Data Fetched with VK Connect">
-				<Cell
-					before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200} /> : null}
-					description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-				>
-					{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-				</Cell>
-			</Group>}
+const generatorSpec = data.spec;
+const generatorTime = data.time;
+const generatorWho = data.who;
+const generatorWhat = data.what;
 
-		<Group title="Navigation Example">
-			<Div>
-				<Button size="xl" level="2" onClick={go} data-to="persik">
-					Show me the Persik, please!
-				</Button>
-			</Div>
+const Home = ({ id, go }) => {
+
+	const [spec, setSpec] = useState(null);
+
+	const selectSpec = async (e) => {
+		setSpec(e.currentTarget.dataset.title);
+	}
+
+	const start = () => {
+		console.warn('start');
+	}
+
+	const button = spec ? <Group><Div><Button level="primary" size="xl" onClick={start}>Сгенерировать</Button> </Div></Group> : '';
+
+	return <Panel id={id}>
+		<PanelHeader>{id}</PanelHeader>
+		<Group>
+			<Header level="secondary">Выберите специальность</Header>
+			<List>
+				{generatorSpec.map(item => (
+					<Cell data-title={item} key={item} onClick={selectSpec}>{item}</Cell>
+				))}
+			</List>
 		</Group>
+		<Group>
+			<Header level="secondary">Через</Header>
+			<Generator items={generatorTime} multipler={2}></Generator>
+			<Header level="secondary">Даже</Header>
+			<Generator items={generatorWho} multipler={3}></Generator>
+			<Header level="secondary">Сможет</Header>
+			<Generator items={generatorWhat} multipler={4}></Generator>
+		</Group>
+		{button}
 	</Panel>
-);
+};
 
 Home.propTypes = {
 	id: PropTypes.string.isRequired,
 	go: PropTypes.func.isRequired,
-	fetchedUser: PropTypes.shape({
-		photo_200: PropTypes.string,
-		first_name: PropTypes.string,
-		last_name: PropTypes.string,
-		city: PropTypes.shape({
-			title: PropTypes.string,
-		}),
-	}),
+
 };
 
 export default Home;
