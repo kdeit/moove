@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://kdeit.github.io/moove/",
   "scripts": {
-    "start": "cross-env PORT=10888 react-scripts start",
-    "build": "react-scripts build"
+    "start": "cross-env PORT=10888 HTTPS=true react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
