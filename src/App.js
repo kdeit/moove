@@ -47,7 +47,7 @@ const App = () => {
 	return (
 		<View activePanel={activePanel} popout={popout}>
 			<Select id='select' goTo={goTo} data={data} setData={setData} />
-			<Generator id='generator' go={go} data={data} setData={setData} />
+			<Generator id='generator' go={go} goTo={goTo} data={data} setData={setData} />
 			<Score id='score' fetchedUser={fetchedUser} go={go} data={data} />
 		</View>
 	);

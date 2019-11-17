@@ -19,8 +19,15 @@ const generatorWhat = data.what;
 
 const Home = (props) => {
 	const finish = () => {
-
-		console.warn(props.data);
+		let isAllGenerate = true;
+		for (let i in props.data) {
+			if (!props.data[i]) {
+				isAllGenerate = false;
+			}
+		}
+		if (isAllGenerate) {
+			window.setTimeout(() => { props.goTo("score") }, 1000)
+		}
 	}
 
 	return <Panel id={props.id}>
@@ -45,6 +52,7 @@ const Home = (props) => {
 Home.propTypes = {
 	id: PropTypes.string.isRequired,
 	go: PropTypes.func.isRequired,
+	goTo: PropTypes.func.isRequired,
 	data: PropTypes.object,
 	setData: PropTypes.func
 

@@ -10,7 +10,7 @@ const generatorSpec = data.spec;
 const Select = (props) => {
 	const selectSpec = async (e) => {
 		props.setData(val => {
-			val.spec = e.currentTarget.dataset.title;
+			val.spec = generatorSpec.find(i => i.id == e.currentTarget.dataset.id);
 			return val;
 		})
 		props.goTo('generator');
@@ -25,7 +25,7 @@ const Select = (props) => {
 			<Header level="secondary">Выберите специальность</Header>
 			<List>
 				{generatorSpec.map(item => (
-					<Cell expandable data-title={item.title} key={item.id} onClick={selectSpec}>{item.title}</Cell>
+					<Cell expandable data-id={item.id} key={item.id} onClick={selectSpec}>{item.title}</Cell>
 				))}
 			</List>
 		</Group>
