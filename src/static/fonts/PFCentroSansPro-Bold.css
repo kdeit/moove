@@ -1,0 +1,12 @@
+/* Webfont: PFCentroSansPro-Bold */@font-face {
+    font-family: 'PFCentroSansPro';
+    src: url('PFCentroSansPro-Bold.eot'); /* IE9 Compat Modes */
+    src: url('PFCentroSansPro-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('PFCentroSansPro-Bold.woff') format('woff'), /* Modern Browsers */
+         url('PFCentroSansPro-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('PFCentroSansPro-Bold.svg#PFCentroSansPro-Bold') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+

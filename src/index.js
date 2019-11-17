@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom';
 import connect from '@vkontakte/vk-connect';
 import App from './App';
 // import registerServiceWorker from './sw';
+import "./static/fonts/PFCentroSansPro-Bold.css"
+import "./static/fonts/PFCentroSansPro-Regular.css"
 
 // Init VK  Mini App
 connect.send('VKWebAppInit');
