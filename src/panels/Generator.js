@@ -35,17 +35,13 @@ const Home = (props) => {
 	}
 
 	let filteredWhat = generatorWhat.filter(i => i.spec_id === props.data.spec.id);
-	console.warn(filteredWhat);
+
 	const [what, setWhat] = useState(filteredWhat);
 
 
 
 	return <Panel id={props.id}>
-		<PanelHeader
-			left={<HeaderButton onClick={props.go} data-to="select">
-				{osName === IOS ? <Icon28ChevronBack /> : <Icon24Back />}
-			</HeaderButton>}
-		>
+		<PanelHeader>
 			Moove
 		</PanelHeader>
 		<Group>
