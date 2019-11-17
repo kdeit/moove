@@ -34,6 +34,12 @@ const Home = (props) => {
 		}
 	}
 
+	let filteredWhat = generatorWhat.filter(i => i.spec_id === props.data.spec.id);
+	console.warn(filteredWhat);
+	const [what, setWhat] = useState(filteredWhat);
+
+
+
 	return <Panel id={props.id}>
 		<PanelHeader
 			left={<HeaderButton onClick={props.go} data-to="select">
@@ -65,7 +71,7 @@ const Home = (props) => {
 				<img src={ico3} alt="" className="Icon" />
 				<span>Сможет</span>
 			</Header>
-			<Generator items={generatorWhat} finish={finish} type="what" multipler={4} data={props.data} setData={props.setData}></Generator>
+			<Generator items={what} finish={finish} type="what" multipler={4} data={props.data} setData={props.setData}></Generator>
 		</Group>
 	</Panel>
 };

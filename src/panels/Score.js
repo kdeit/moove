@@ -40,9 +40,10 @@ const Score = props => (
 			}
 			<Div className="score">
 				<Div>Уже через <span>{props.data.time.title}</span> даже <span>{props.data.who.title}</span> будет <span>{props.data.what.title}</span> лучше тебя </Div>
+				<Div>Запишись на программу MOOVE пока не поздно!</Div>
 				<Div>
 					<Button size="xl" level="1">
-						Присоединяйся
+						Записаться
 				</Button>
 				</Div>
 			</Div>
