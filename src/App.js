@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import connect from '@vkontakte/vk-connect';
 import View from '@vkontakte/vkui/dist/components/View/View';
-import ScreenSpinner from '@vkontakte/vkui/dist/components/ScreenSpinner/ScreenSpinner';
 import '@vkontakte/vkui/dist/vkui.css';
-
-import Home from './panels/Home';
+import Select from './panels/Select';
+import Generator from './panels/Generator';
 import Score from './panels/Score';
+import ScreenSpinner from '@vkontakte/vkui/dist/components/ScreenSpinner/ScreenSpinner';
+import connect from '@vkontakte/vk-connect';
 
 
 const App = () => {
-	const [activePanel, setActivePanel] = useState('home');
-	const [fetchedUser, setUser] = useState(null);
-	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
+	const [activePanel, setActivePanel] = useState('select');
 
 	const [data, setData] = useState({
 		"spec": null,
@@ -20,8 +18,15 @@ const App = () => {
 		"what": null
 	});
 
+	const go = e => {
+		setActivePanel(e.currentTarget.dataset.to);
+	};
+	const goTo = (value) => {
+		setActivePanel(value);
+	}
 
-
+	const [fetchedUser, setUser] = useState(null);
+	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 	useEffect(() => {
 		connect.subscribe(({ detail: { type, data } }) => {
 			if (type === 'VKWebAppUpdateConfig') {
@@ -39,18 +44,10 @@ const App = () => {
 		fetchData();
 	}, []);
 
-	const go = e => {
-		setActivePanel(e.currentTarget.dataset.to);
-	};
-
-	const back = () => {
-		console.warn("return");
-
-	}
-
 	return (
 		<View activePanel={activePanel} popout={popout}>
-			<Home id='home' go={go} data={data} setData={setData} />
+			<Select id='select' goTo={goTo} data={data} setData={setData} />
+			<Generator id='generator' go={go} data={data} setData={setData} />
 			<Score id='score' fetchedUser={fetchedUser} go={go} data={data} />
 		</View>
 	);

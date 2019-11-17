@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { platform, IOS } from '@vkontakte/vkui';
 import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
@@ -9,7 +9,10 @@ import Icon24Back from '@vkontakte/icons/dist/24/back';
 
 
 
+
 const osName = platform();
+
+
 
 
 const Score = props => (
