@@ -2,18 +2,18 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Group, Div } from '@vkontakte/vkui';
 
-const Generator = props => {
+const GeneratorComponent = (props) => {
 
-    let iteration = 0;
-    var count = 0;
     const [index, setIndex] = useState(0);
+
     useEffect(() => {
+        let iteration = 0;
+        var count = 0;
         let min = Math.ceil(0),
             max = Math.floor(props.items.length + 1);
         let random = Math.floor(Math.random() * (max - min)) + min;
 
         const timer = window.setInterval(() => {
-
             if (iteration === props.items.length * props.multipler + random) {
                 switch (props.type) {
                     case 'time':
@@ -33,7 +33,9 @@ const Generator = props => {
                             val.what = props.items[count];
                             return val;
                         })
-                        break
+                        break;
+                    default:
+                        break;
 
                 }
                 window.clearInterval(timer);
@@ -63,7 +65,7 @@ const Generator = props => {
 
 };
 
-Generator.propTypes = {
+GeneratorComponent.propTypes = {
 
     items: PropTypes.array,
     multipler: PropTypes.number.isRequired,
@@ -74,4 +76,4 @@ Generator.propTypes = {
 
 };
 
-export default Generator;
+export default GeneratorComponent;

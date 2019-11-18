@@ -11,7 +11,7 @@ const generatorSpec = data.spec;
 const Select = (props) => {
 	const selectSpec = async (e) => {
 		props.setData(val => {
-			val.spec = generatorSpec.find(i => i.id == e.currentTarget.dataset.id);
+			val.spec = generatorSpec.find(i => i.id === parseInt(e.currentTarget.dataset.id));
 			return val;
 		})
 		props.goTo('generator');
@@ -19,12 +19,13 @@ const Select = (props) => {
 
 
 	return <Panel id={props.id}>
-		<PanelHeader>Moove</PanelHeader>
+		<PanelHeader>MOOVE career generator</PanelHeader>
 		<Group>
 			<Div className="logo-wrapper">
 				<img src={logo} alt="" className="logo" />
 			</Div>
 		</Group>
+
 		<Group className="back-top">
 			<Header level="secondary">
 				<div className="treangle-red"></div>
@@ -44,7 +45,6 @@ Select.propTypes = {
 	goTo: PropTypes.func.isRequired,
 	data: PropTypes.object,
 	setData: PropTypes.func
-
 };
 
 export default Select;

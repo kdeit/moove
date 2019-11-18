@@ -25,6 +25,22 @@ const App = () => {
 		setActivePanel(value);
 	}
 
+	const reset = () => {
+		setActivePanel('select');
+		setData({
+			"spec": null,
+			"time": null,
+			"who": null,
+			"what": null
+		})
+
+	}
+
+	const share = () => {
+		console.warn('share');
+		connect.send("VKWebAppShare", { "link": "https://vk.com/app7210481" });
+	}
+
 	const [fetchedUser, setUser] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 	useEffect(() => {
@@ -48,7 +64,7 @@ const App = () => {
 		<View activePanel={activePanel} popout={popout}>
 			<Select id='select' goTo={goTo} data={data} setData={setData} />
 			<Generator id='generator' go={go} goTo={goTo} data={data} setData={setData} />
-			<Score id='score' fetchedUser={fetchedUser} go={go} data={data} />
+			<Score id='score' share={share} reset={reset} fetchedUser={fetchedUser} go={go} data={data} />
 		</View>
 	);
 }
