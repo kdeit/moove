@@ -37,9 +37,7 @@ const App = () => {
 	}
 
 	const share = () => {
-		console.warn('share');
-
-		connect.send("VKWebAppShare", { "link": "https://vk.com/app7210481", "message": "Уже через " + data.time + " даже " + data.who + " сможет " + data.what + "лучше меня." });
+		connect.send("VKWebAppShowWallPostBox", { "message": "Уже через " + data.time + " даже " + data.who + " сможет " + data.what + " лучше меня. Попробуй.", "attachments": "https://vk.com/app7210481,photo39721559_457239052" });
 	}
 
 	const [fetchedUser, setUser] = useState(null);
