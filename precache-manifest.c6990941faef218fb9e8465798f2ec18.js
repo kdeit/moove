@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5a50b23ed4331bc4789d4412f81c6a3a",
+    "revision": "b1c45432fcf9b4d71ae004d3ff999f50",
     "url": "/moove/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/moove/static/css/2.266626f9.chunk.css"
   },
   {
-    "revision": "9b5f626e9153fb601f5c",
+    "revision": "95ca88979ac8dd8c1ffc",
     "url": "/moove/static/css/main.8b040436.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/moove/static/js/2.4691ef2d.chunk.js"
   },
   {
-    "revision": "9b5f626e9153fb601f5c",
-    "url": "/moove/static/js/main.7440f1ad.chunk.js"
+    "revision": "95ca88979ac8dd8c1ffc",
+    "url": "/moove/static/js/main.ad4855ed.chunk.js"
   },
   {
     "revision": "99e4351cd3fc007c791b",
