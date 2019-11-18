@@ -37,7 +37,7 @@ const App = () => {
 	}
 
 	const share = () => {
-		connect.send("VKWebAppShowWallPostBox", { "message": "Уже через " + data.time + " даже " + data.who + " сможет " + data.what + " лучше меня. Попробуй.", "attachments": "https://vk.com/app7210481,photo39721559_457239052" });
+		connect.send("VKWebAppShowWallPostBox", { "message": "Уже через " + data.time + " даже " + data.who + " сможет " + data.what + " лучше меня. Запишись на программу MOOVE пока не поздно! https://common.skolkovo.ru/moove-by-skolkovo-mts/", "attachments": "https://vk.com/app7210481,photo39721559_457239052" });
 	}
 
 	const [fetchedUser, setUser] = useState(null);
