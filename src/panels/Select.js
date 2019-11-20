@@ -33,7 +33,7 @@ const Select = (props) => {
 			</Header>
 			<List>
 				{generatorSpec.map(item => (
-					<Cell expandable data-id={item.id} key={item.id} onClick={selectSpec}>{item.title}</Cell>
+					<Cell className="mouse-hover" expandable data-id={item.id} key={item.id} onClick={selectSpec}>{item.title}</Cell>
 				))}
 			</List>
 		</Group>

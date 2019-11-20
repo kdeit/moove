@@ -33,7 +33,7 @@ const Score = (props) => {
 					<Div>Уже через <span>{props.data.time.title}</span> даже <span>{props.data.who.title}</span> будет <span>{props.data.what.title}</span> лучше тебя </Div>
 					<Div>Запишись на программу MOOVE пока не поздно!</Div>
 					<Div>
-						<a href="https://common.skolkovo.ru/moove-by-skolkovo-mts/" className="btn">
+						<a target="_blank" href="https://common.skolkovo.ru/moove-by-skolkovo-mts/" className="btn">
 							<Button size="xl" level="1">
 								Записаться
 				</Button>

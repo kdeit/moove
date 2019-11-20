@@ -34,11 +34,7 @@ const Generator = (props) => {
 
 	return <Panel id={props.id}>
 		<PanelHeader>MOOVE career generator</PanelHeader>
-		<Group>
-			<Div className="logo-wrapper">
-				<img src={logo} alt="" className="logo" />
-			</Div>
-		</Group>
+
 		<Group className="generator-wrapper">
 
 			<Header level="secondary">

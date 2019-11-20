@@ -37,7 +37,7 @@ const App = () => {
 	}
 
 	const share = () => {
-		connect.send("VKWebAppShowWallPostBox", { "message": "Уже через " + data.time.title + " даже " + data.who.title + " сможет " + data.what.title + " лучше меня. Запишись на программу MOOVE пока не поздно! https://vk.com/app7210481", "attachments": "https://vk.com/app7210481,photo-3967053_457239033" });
+		connect.send("VKWebAppShowWallPostBox", { "message": "Уже через " + data.time.title + " даже " + data.who.title + " сможет " + data.what.title + " лучше меня. Запишись на программу MOOVE пока не поздно!", "attachments": "https://vk.com/app7210481" });
 	}
 
 	const [fetchedUser, setUser] = useState(null);
