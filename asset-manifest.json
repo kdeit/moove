@@ -1,31 +1,31 @@
 {
   "files": {
-    "main.css": "/moove/static/css/main.76c3ec6e.chunk.css",
-    "main.js": "/moove/static/js/main.7626f4b7.chunk.js",
-    "main.js.map": "/moove/static/js/main.7626f4b7.chunk.js.map",
+    "main.css": "/moove/static/css/main.7a2f496d.chunk.css",
+    "main.js": "/moove/static/js/main.20763489.chunk.js",
+    "main.js.map": "/moove/static/js/main.20763489.chunk.js.map",
     "runtime-main.js": "/moove/static/js/runtime-main.8f99bb52.js",
     "runtime-main.js.map": "/moove/static/js/runtime-main.8f99bb52.js.map",
-    "static/css/2.266626f9.chunk.css": "/moove/static/css/2.266626f9.chunk.css",
-    "static/js/2.7cf048eb.chunk.js": "/moove/static/js/2.7cf048eb.chunk.js",
-    "static/js/2.7cf048eb.chunk.js.map": "/moove/static/js/2.7cf048eb.chunk.js.map",
+    "static/css/2.2cfa1b23.chunk.css": "/moove/static/css/2.2cfa1b23.chunk.css",
+    "static/js/2.1999fe0d.chunk.js": "/moove/static/js/2.1999fe0d.chunk.js",
+    "static/js/2.1999fe0d.chunk.js.map": "/moove/static/js/2.1999fe0d.chunk.js.map",
     "index.html": "/moove/index.html",
-    "precache-manifest.2ffd39e56751e5ceacd042498d0877e1.js": "/moove/precache-manifest.2ffd39e56751e5ceacd042498d0877e1.js",
+    "precache-manifest.e6c3d30ef3c9dc312cfce343eeeed5ca.js": "/moove/precache-manifest.e6c3d30ef3c9dc312cfce343eeeed5ca.js",
     "service-worker.js": "/moove/service-worker.js",
-    "static/css/2.266626f9.chunk.css.map": "/moove/static/css/2.266626f9.chunk.css.map",
-    "static/css/main.76c3ec6e.chunk.css.map": "/moove/static/css/main.76c3ec6e.chunk.css.map",
+    "static/css/2.2cfa1b23.chunk.css.map": "/moove/static/css/2.2cfa1b23.chunk.css.map",
+    "static/css/main.7a2f496d.chunk.css.map": "/moove/static/css/main.7a2f496d.chunk.css.map",
     "static/media/PFCentroSansPro-Bold.css": "/moove/static/media/PFCentroSansPro-Bold.ecd30374.woff",
     "static/media/PFCentroSansPro-Regular.css": "/moove/static/media/PFCentroSansPro-Regular.f7e0ed14.ttf",
     "static/media/ico1.svg": "/moove/static/media/ico1.25b87295.svg",
     "static/media/ico2.svg": "/moove/static/media/ico2.0ae34cf9.svg",
     "static/media/ico3.svg": "/moove/static/media/ico3.9a89deea.svg",
-    "static/media/logo.svg": "/moove/static/media/logo.9454ac83.svg",
+    "static/media/logo.svg": "/moove/static/media/logo.66f6faf3.svg",
     "static/media/app.scss": "/moove/static/media/top.a1ae85a5.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.8f99bb52.js",
-    "static/css/2.266626f9.chunk.css",
-    "static/js/2.7cf048eb.chunk.js",
-    "static/css/main.76c3ec6e.chunk.css",
-    "static/js/main.7626f4b7.chunk.js"
+    "static/css/2.2cfa1b23.chunk.css",
+    "static/js/2.1999fe0d.chunk.js",
+    "static/css/main.7a2f496d.chunk.css",
+    "static/js/main.20763489.chunk.js"
   ]
 }
